@@ -39,13 +39,13 @@
             <div class="hero-content">
                 <h1>Rizzy Doors</h1>
                 <h2>Custom Doors. Unmatched Speed.</h2>
-                <a href="#contact" class="cta-button">Contact Us</a>
+                <a href="#contact" class="cta-button">CONTACT US</a>
             </div>
         </section>
 
         <section id="products" class="products">
             <div class="container">
-                <h2>Our Products</h2>
+                <h2>Rizzy Products</h2>
                 <div class="product-grid">
                     <div class="product-card door-card">
                         <div class="door-image">
@@ -144,7 +144,7 @@
 
         <section id="values" class="values">
             <div class="container">
-                <h2>Our Values</h2>
+                <h2>Rizzy Values</h2>
                 <div class="values-grid">
                     <div class="value-card">
                         <span class="icon">⏱️</span>
@@ -156,9 +156,8 @@
                     <div class="value-card">
                         <span class="icon">🏆</span>
                         <h3>First class customer experience</h3>
-                        <p>From initial consultation to final delivery, we treat every project with the attention it
-                            deserves. Our dedicated team ensures your vision becomes reality with personalized service
-                            at every step.</p>
+                        <p>From order to delivery, we treat every custom project with the attention it deserves. Our
+                            team ensures your vision becomes reality with unmatched service at every step.</p>
                     </div>
                     <div class="value-card">
                         <span class="icon">⚙️</span>
@@ -181,7 +180,7 @@
 
         <section id="showcase" class="showcase">
             <div class="container">
-                <h2>Showcase</h2>
+                <h2>Rizzy Showcase</h2>
                 <div class="showcase-grid">
                     <div class="showcase-item">Product 1</div>
                     <div class="showcase-item">Product 2</div>
@@ -197,16 +196,52 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Contact Us</h2>
+                <h2>Contact Rizzy</h2>
                 <div class="contact-info">
                     <h3>Brent Kamprud</h3>
                     <p>Owner / Founder</p>
-                    <p><a href="tel:4805442940">(480) 544-2940</a></p>
-                    <p><a href="mailto:brent@rizzydoors.com">brent@rizzydoors.com</a></p>
+                    <p><b><a href="tel:4805442940">(480) 544-2940</a></b></p>
+                    <p><b><a href="mailto:brent@rizzydoors.com">brent@rizzydoors.com</a></b></p>
+                    <br>
+                    <h3>OR</h3>
+                    <form class="contact-form" id="contact-form"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSdBiJhsG0ux4PvR4uWJZZkdLHNEel5sGALa89fVSius0UI0aA/formResponse"
+                        target="hidden_iframe" onsubmit="handleSubmit()">
+                        <input type="text" name="entry.880712586" placeholder="Name" required><br>
+                        <input type="email" name="entry.2091924614" placeholder="Email Address" required><br>
+                        <textarea name="entry.1139083769" placeholder="What can we help you with today?" rows="4"
+                            required></textarea><br>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                        <div id="form-message">
+                            <h3>Thank you! Your message has been sent.</h3>
+                        </div>
+                    </form>
+                    <!-- Hidden iframe for form submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                    <script>
+                        function handleSubmit() {
+                            const form = document.getElementById('contact-form');
+                            const message = document.getElementById('form-message');
+
+                            setTimeout(() => {
+                                form.reset();
+                                message.style.display = 'block';
+
+                                // Wait 4 seconds, then fade out
+                                setTimeout(() => {
+                                    message.classList.add('fade-out');
+
+                                    // Remove the message entirely after it fades
+                                    setTimeout(() => {
+                                        message.style.display = 'none';
+                                        message.classList.remove('fade-out');
+                                    }, 1000); // match the CSS transition time
+                                }, 4000); // delay before fading
+                            }, 500); // delay to let the form submit
+                        }
+                    </script>
+
                 </div>
-                <form class="contact-form" action="mailto:brent@rizzydoors.com">
-                    <button type="submit" class="submit-btn">Make Inquiry</button>
-                </form>
             </div>
         </section>
     </main>
