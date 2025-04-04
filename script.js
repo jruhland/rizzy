@@ -43,4 +43,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Form submission handling
+    const form = document.getElementById('contact-form');
+    const formContainer = form.parentElement;
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        try {
+            const formData = new FormData(form);
+            await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            });
+            
+            // Replace form with thank you message
+            formContainer.innerHTML = `
+                <div class="thank-you-message">
+                    <h3>Thank You!</h3>
+                    <p>Your message has been received. We'll get back to you shortly.</p>
+                </div>
+            `;
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formContainer.innerHTML = `
+                <div class="error-message">
+                    <h3>Oops!</h3>
+                    <p>Something went wrong. Please try again.</p>
+                    <button class="submit-btn" onclick="location.reload()">Try Again</button>
+                </div>
+            `;
+        }
+    });
+
+    // Auto-expand textarea
+    const textarea = document.querySelector('textarea');
+    textarea.addEventListener('input', function () {
+        this.style.height = 'auto';
+        const newHeight = Math.min(this.scrollHeight, 25 * 24); // 25 rows max, 24px per row
+        this.style.height = newHeight + 'px';
+    });
 }); 

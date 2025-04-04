@@ -202,45 +202,26 @@
                     <p>Owner / Founder</p>
                     <p><b><a href="tel:4805442940">(480) 544-2940</a></b></p>
                     <p><b><a href="mailto:brent@rizzydoors.com">brent@rizzydoors.com</a></b></p>
-                    <br>
-                    <h3>OR</h3>
+                    <div class="contact-divider">OR</div>
                     <form class="contact-form" id="contact-form"
-                        action="https://docs.google.com/forms/d/e/1FAIpQLSdBiJhsG0ux4PvR4uWJZZkdLHNEel5sGALa89fVSius0UI0aA/formResponse"
-                        target="hidden_iframe" onsubmit="handleSubmit()">
-                        <input type="text" name="entry.880712586" placeholder="Name" required><br>
-                        <input type="email" name="entry.2091924614" placeholder="Email Address" required><br>
-                        <textarea name="entry.1139083769" placeholder="What can we help you with today?" rows="4"
-                            required></textarea><br>
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSdBiJhsG0ux4PvR4uWJZZkdLHNEel5sGALa89fVSius0UI0aA/formResponse">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="entry.880712586" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="entry.2091924614" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="entry.1139083769" placeholder="What can we help you with today?" rows="8"
+                                style="resize: none; min-height: 200px;" required></textarea>
+                        </div>
                         <button type="submit" class="submit-btn">Send Inquiry</button>
                         <div id="form-message">
                             <h3>Thank you! Your message has been sent.</h3>
                         </div>
                     </form>
-                    <!-- Hidden iframe for form submission -->
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-                    <script>
-                        function handleSubmit() {
-                            const form = document.getElementById('contact-form');
-                            const message = document.getElementById('form-message');
-
-                            setTimeout(() => {
-                                form.reset();
-                                message.style.display = 'block';
-
-                                // Wait 4 seconds, then fade out
-                                setTimeout(() => {
-                                    message.classList.add('fade-out');
-
-                                    // Remove the message entirely after it fades
-                                    setTimeout(() => {
-                                        message.style.display = 'none';
-                                        message.classList.remove('fade-out');
-                                    }, 1000); // match the CSS transition time
-                                }, 4000); // delay before fading
-                            }, 500); // delay to let the form submit
-                        }
-                    </script>
-
                 </div>
             </div>
         </section>
