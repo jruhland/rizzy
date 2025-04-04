@@ -304,61 +304,11 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.contact-divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.contact-divider::before,
-.contact-divider::after {
-    content: '';
-    flex: 1;
-}
-
-.contact-divider span {
-    padding: 0 1rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
 .contact-form {
     max-width: 400px;
     margin: 0 auto 2rem;
     background: none;
     box-shadow: none;
-}
-
-.form-group {
-    margin-bottom: 1.25rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.875rem;
-    border: 1px solid rgba(27, 60, 115, 0.15);
-    border-radius: 6px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-    background-color: var(--background-color);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(27, 60, 115, 0.08);
-}
-
-.form-group textarea {
-    resize: none;
-    height: 8em;
-    line-height: 1.5;
-    overflow-y: auto;
 }
 
 .submit-btn {
